@@ -65,9 +65,9 @@ void loop(){
     delay(3000);
     lcd.clear();
     lcd.setCursor(0, 0);
-    lcd.print("  Mert Arduino");
+    lcd.print("  InspirEd Hacks");
     lcd.setCursor(0, 1);
-    lcd.print("Tutorial Project");
+    lcd.print("My Project");
     delay(7000);
     lcd.clear();
   }
