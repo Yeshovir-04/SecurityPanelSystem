@@ -1,7 +1,7 @@
 #include <LiquidCrystal.h> //include LCD library (standard library)
 #include <Keypad.h> //include keypad library - first you must install library (library link in the video description)
 
-#define redLED 10 //define the LED pins
+#define blueLED 10 //define the LED pins
 #define greenLED 11
 
 char* password ="1234"; //create a password
@@ -28,7 +28,7 @@ LiquidCrystal lcd (A0, A1, A2, A3, A4, A5); // pins of the LCD. (RS, E, D4, D5, 
 void setup(){
 
   lcd.begin(16, 2);
-  pinMode(redLED, OUTPUT);  //set the LED as an output
+  pinMode(blueLED, OUTPUT);  //set the LED as an output
   pinMode(greenLED, OUTPUT);
   setLocked (true); //state of the password
 }
@@ -46,7 +46,7 @@ void loop(){
   whichKey == 'B' || whichKey == 'C' || whichKey == 'D'){
 
     pozisyon=0;
-    setLocked (true);
+    setLocked (false);
     lcd.clear();
     lcd.setCursor(0, 0);
     lcd.print("  Invalid Key!");
@@ -65,10 +65,10 @@ void loop(){
     delay(3000);
     lcd.clear();
     lcd.setCursor(0, 0);
-    lcd.print("  InspirEd Hacks");
+    lcd.print("InspirED Hacks");
     lcd.setCursor(0, 1);
-    lcd.print("My Project");
-    delay(7000);
+    lcd.print("Security Panel");
+    delay(10000);
     lcd.clear();
   }
   delay(100);
@@ -76,11 +76,11 @@ void loop(){
 
 void setLocked(int locked){
   if(locked){
-    digitalWrite(redLED, HIGH);
+    digitalWrite(blueLED, HIGH);
     digitalWrite(greenLED, LOW);
     }
     else{
-      digitalWrite(redLED, LOW);
+      digitalWrite(blueLED, HIGH);
       digitalWrite(greenLED, HIGH);
     }
   }
